@@ -20,7 +20,7 @@ namespace LearningMVC.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LearnMVCDbContext", throwIfV1Schema: false)
         {
         }
 
@@ -28,5 +28,7 @@ namespace LearningMVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<LearningMVC.Models.Person> People { get; set; }
     }
 }
